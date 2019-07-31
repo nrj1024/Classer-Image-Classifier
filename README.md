@@ -8,6 +8,15 @@ A generalized image classifier using convolutional neuaral network with a graphi
 ![](Preview/preview1.png)
 ![](Preview/preview2.PNG)
 
+### Dependencies
+* PyQt5
+* Keras
+* Tensorflow
+* PIL
+* Numpy
+* SkImage
+* Matplotlib
+
 ### Instructions
 
 The data set should be in the form of :
