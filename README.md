@@ -8,7 +8,7 @@ A generalized image classifier using convolutional neuaral network with a graphi
 ![](Preview/preview1.png)
 ![](Preview/preview2.PNG)
 
-###Instructions
+### Instructions
 
 The data set should be in the form of :
 
@@ -82,3 +82,4 @@ DATASET
          .
          .
 ```
+
