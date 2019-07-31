@@ -1,0 +1,26 @@
+QWidget { 
+        background-color: #ec3f4f;
+}
+
+QPushButton {
+        background-color: white;
+        color: #ec3f4f;
+        border-radius: 20px;
+        width: 180px;
+        height: 20px;
+        padding: 10px;
+     }
+
+QPushButton:pressed {
+        background-color: #e97986;
+        color: white;
+        border-radius: 20px;
+        width: 180px;
+        height: 20px;
+        padding: 10px;
+     }
+
+QLabel {
+        color: #ec3f4f;
+        background-color: white;
+}
