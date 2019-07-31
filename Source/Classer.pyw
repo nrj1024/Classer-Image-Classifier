@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QPushButton, QSystemT
 from PyQt5.QtGui import QCursor, QIcon, QPixmap
 from PyQt5.QtCore import Qt, QTimer
 import ctypes
-from Classifier import CNN
+from classifier import CNN
 from time import sleep
 from os import listdir
 from threading import Thread
