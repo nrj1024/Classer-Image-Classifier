@@ -8,7 +8,7 @@ A generalized image classifier using convolutional neuaral network with a graphi
 ![](Preview/preview1.png)
 ![](Preview/preview2.PNG)
 
-### Dependencies
+### Required Modules
 * PyQt5
 * Keras
 * Tensorflow
