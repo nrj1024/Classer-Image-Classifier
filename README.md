@@ -82,4 +82,16 @@ DATASET
          .
          .
 ```
+Note : All images must be in .jpg
 
+### 'Train Model'
+It asks you to choose the directory of a data set, which needs to be in the format described above. After getting trained from the data set it will save the weights as 'model.h5' in the directory of the data set itself.
+
+### 'Load Model'
+It also asks you to choose the directory of a data set. On doing that it loads the weights for that particular data set saved as 'model.h5' in that directory.
+
+### 'Test Model'
+After loading the model you can use this feature to test it.
+It gives you 2 options :
+-Mass Test : It asks you to choose the folder with the (mixed) test images and then displays all of them in a window with predicted labels and their likelihood percentage.
+-Single Test : It asks you to just choose a single image and then displays it with the likelihood of all the classes with the most probable one inside the square brackets []. 
