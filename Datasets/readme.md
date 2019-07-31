@@ -2,4 +2,4 @@ The datasets in the zip aren't that great when it comes to the number or quality
 
 Remember, the larger and cleaner the dataset would be, the better results you'll get. You can always modify the source code to better suit your needs. However, the most easy way to get better results would be to increase the number of EPOCHS in classifier.py
 
-*Download Link :* 
+*Download Link :* https://drive.google.com/file/d/1rv8e-CP7yQMoUj7P4LM65LJHQOdUhU32/view?usp=sharing
