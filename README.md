@@ -94,4 +94,4 @@ It also asks you to choose the directory of a data set. On doing that it loads t
 After loading the model you can use this feature to test it.
 It gives you 2 options :
 1. Mass Test : It asks you to choose the folder with the (mixed) test images and then displays all of them in a window with predicted labels and their likelihood percentage.
-2. Single Test : It asks you to just choose a single image and then displays it with the likelihood of all the classes with the most probable one inside the square brackets []. 
+2. Single Test : It asks you to just choose a single image and then displays it with the likelihood of all the classes with the most probable one inside the square brackets [ ]. 
