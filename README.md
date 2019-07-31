@@ -103,7 +103,7 @@ CatvsDog
                       img2.jpg
                       ...
 ```
-Note : All images must be in .jpg | It is recommended to have a 80-20 split on the number of images for train and validation for any class.
+Note : All images must be in .jpg. It is recommended to have a 80-20 split on the number of images for train and validation for any class.
 
 
 * *Launch the program using Classer.pyw*
