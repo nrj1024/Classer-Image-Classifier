@@ -50,25 +50,25 @@ DATASET
       \
        validation
                \
-          class1
-               \
-               image1.jpg
-               image2.jpg
-               image3.jpg
-               ...
-               
-          class2
-               \
-               image1.jpg
-               image2.jpg
-               image3.jpg
-               ...
-          class3
-               \
-               image1.jpg
-               image2.jpg
-               image3.jpg
-               ...
+               class1
+                    \
+                    image1.jpg
+                    image2.jpg
+                    image3.jpg
+                    ...
+
+               class2
+                    \
+                    image1.jpg
+                    image2.jpg
+                    image3.jpg
+                    ...
+               class3
+                    \
+                    image1.jpg
+                    image2.jpg
+                    image3.jpg
+                    ...
         ...
 ```                
 #### Example
