@@ -31,31 +31,21 @@ DATASET
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
+               ...
                
           class2
                \
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
+               ...
           class3
                \
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
-         .
-         .
-         .
-         .
-         .
+               ...
+        ...
           
       \
        validation
@@ -65,48 +55,53 @@ DATASET
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
+               ...
                
           class2
                \
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
+               ...
           class3
                \
                image1.jpg
                image2.jpg
                image3.jpg
-               .
-               .
-               .
-         .
-         .
-         .
-         .
-         .
-         
-         
+               ...
+        ...
+```                
 #### Example
-
+```
 CatvsDog
        \
-       Cat
-          \
-          img1.jpg
-          img2.jpg
-          ...
-       \
-       Dog
-          \
-          img1.jpg
-          img2.jpg
-          ...
+       train
+            \
+             Cat
+                \
+                img1.jpg
+                img2.jpg
+                ...
+            \
+             Dog
+                \
+                img1.jpg
+                img2.jpg
+                 ...
+        \
+        validation
+                  \
+                   Cat
+                      \
+                      img1.jpg
+                      img2.jpg
+                      ...
+                  \
+                   Dog
+                      \
+                      img1.jpg
+                      img2.jpg
+                      ...
 ```
 Note : All images must be in .jpg
 
