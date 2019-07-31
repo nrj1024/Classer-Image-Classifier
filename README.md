@@ -12,10 +12,11 @@ A generalized image classifier using convolutional neuaral network with a graphi
 
 The data set should be in the form of :
 
-  DATASET
-        \
-        train
-            \
+```
+DATASET
+       \
+       train
+           \
           class1
                \
                image1.jpg
@@ -80,4 +81,4 @@ The data set should be in the form of :
          .
          .
          .
-       
+```
