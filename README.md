@@ -90,6 +90,23 @@ DATASET
          .
          .
          .
+         
+         
+#### Example
+
+CatvsDog
+       \
+       Cat
+          \
+          img1.jpg
+          img2.jpg
+          ...
+       \
+       Dog
+          \
+          img1.jpg
+          img2.jpg
+          ...
 ```
 Note : All images must be in .jpg
 
