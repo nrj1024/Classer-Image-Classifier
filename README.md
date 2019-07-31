@@ -1,2 +1,2 @@
 # Classer-Image-Classifier
-A generalized image classifier using CNN with a GUI so that anyone can use it.
+A generalized image classifier using convolutional neuaral network with a graphical user interface.
