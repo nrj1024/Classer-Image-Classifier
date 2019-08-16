@@ -6,6 +6,7 @@ from keras.optimizers import Nadam
 from keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from keras.layers import Activation, Dropout, Flatten, Dense
 from keras.callbacks import EarlyStopping, ModelCheckpoint
+from livelossplot import PlotLossesKeras
 from PIL import Image
 import numpy as np
 from skimage import transform
@@ -171,7 +172,7 @@ class CNN:
 
     def masstest(self,path):
         self.images=os.listdir(path)
-        fig2=plt.figure(figsize=(14, 8))
+        fig2=plt.figure(figsize=(16, 16))
         self.length=len(self.images)
         columns = 5
         rows = ceil(self.length/columns)

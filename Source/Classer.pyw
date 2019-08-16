@@ -15,8 +15,9 @@ class classer:
       self.w.setWindowTitle("Classer")
       self.l=QLabel(self.w)
       self.l.setGeometry(0,462,640,18)
-      self.l.setText('  Status : Ready')
+      self.l.setText('  Ready!')
       self.model=CNN()
+      self.folder=''
 
    def trainM(self):
       self.datadir=''
@@ -27,18 +28,16 @@ class classer:
          if 'train' not in self.sub and 'validation' not in self.sub:
             self.l.setText('  Selected directory doesn\'t have \'train\' or \'validation\' or both!')
          else:
-            self.l.setText('  Status : Training...')
+            self.l.setText('  Training...')
             self.model.setpath(self.datadir)
             self.model.prepdata()
             self.model.initmodel()
             self.model.trainmodel()
-            self.l.setText('  Status : Model Trained for '+self.folder)
+            self.l.setText('  Model Trained for '+self.folder)
 
    def loadM(self):
       self.datadir=''
       self.datadir = str(QFileDialog.getExistingDirectory(self.w,"Select Directory for Test Images"))
-      self.folder = self.datadir.split('/')[-1]
-      self.sub = listdir(self.datadir)
 
       def load():
          self.model.setpath(self.datadir)
@@ -47,23 +46,35 @@ class classer:
          self.model.loadmodel()
 
       if self.datadir!='':
+         self.sub = listdir(self.datadir)
          if 'model.h5' not in self.sub:
             self.l.setText('  Model not found!')
          else:
-            self.l.setText('  Status : Loading...')
+            self.l.setText('  Loading...')
             load()
-            self.l.setText('  Status : Model Loaded for '+self.folder)
+            self.folder = self.datadir.split('/')[-1]
+            self.l.setText('  Model Loaded for '+self.folder)
 
    def mtest(self):
-      self.testdir=''
-      self.testdir = str(QFileDialog.getExistingDirectory(self.test,"Select the folder with test images"))
-      if self.testdir!='':
-         self.model.masstest(self.testdir)
+      if self.folder=='':
+         self.l.setText('  No model is loaded yet!')
+      else:
+         self.testdir=''
+         self.testdir = str(QFileDialog.getExistingDirectory(self.test,"Select Directory for Dataset"))
+         if self.testdir!='':
+            self.filelist=listdir(self.testdir)
+            if self.filelist==[]:
+               self.l.setText('  No images in the selected folder')      
+            else:
+               self.model.masstest(self.testdir)
 
    def stest(self):
-      self.imgloc = QFileDialog.getOpenFileName(self.test,"Select an Image")
-      if self.imgloc[0]!='':
-         self.model.singletest(self.imgloc[0])
+      if self.folder=='':
+         self.l.setText('  No model is loaded yet!')
+      else:
+         self.imgloc = QFileDialog.getOpenFileName(self.test,"Select an Image",filter="Image Files (*.jpg *.png *.bmp)")
+         if self.imgloc[0]!='':
+            self.model.singletest(self.imgloc[0])
 
    def testM(self):
       self.test=QWidget()
