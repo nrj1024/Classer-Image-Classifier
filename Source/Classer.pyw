@@ -78,6 +78,7 @@ class classer:
 
    def testM(self):
       self.test=QWidget()
+      self.test.move(355,75)
       self.test.setFixedSize(640,480)
       self.test.setWindowTitle("Test Model")
 
