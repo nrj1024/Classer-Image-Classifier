@@ -131,7 +131,7 @@ class CNN:
             epochs=self.EPOCHS,
             validation_data=self.validation_generator,
             validation_steps=len(self.validation_generator.filenames) // self.BATCH_SIZE,
-            #callbacks=[self.earlyStopping, self.mcp_save,PlotLossesKeras], 
+            #callbacks=[self.earlyStopping, self.mcp_save,PlotLossesKeras()], 
             verbose=1)
         self.model.save_weights(self.MODEL_FILE)
 
