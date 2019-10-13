@@ -6,7 +6,7 @@ from tensorflow.keras.optimizers import Nadam
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from tensorflow.keras.layers import Activation, Dropout, Flatten, Dense
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from livelossplot import PlotLossesKeras
+from livelossplot.tf_keras import PlotLossesCallback
 from PIL import Image
 import numpy as np
 from skimage import transform
@@ -131,7 +131,7 @@ class CNN:
             epochs=self.EPOCHS,
             validation_data=self.validation_generator,
             validation_steps=len(self.validation_generator.filenames) // self.BATCH_SIZE,
-            #callbacks=[self.earlyStopping, self.mcp_save,PlotLossesKeras()], 
+            #callbacks=[self.earlyStopping, self.mcp_save,PlotLossesCallback()], 
             verbose=1)
         self.model.save_weights(self.MODEL_FILE)
 
