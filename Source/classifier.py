@@ -5,8 +5,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Nadam
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, BatchNormalization
 from tensorflow.keras.layers import Activation, Dropout, Flatten, Dense
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from livelossplot.tf_keras import PlotLossesCallback
+from tensorflow.keras.callbacks import ModelCheckpoint
 from PIL import Image
 import numpy as np
 from skimage import transform
@@ -16,7 +15,7 @@ import matplotlib
 matplotlib.use('Qt5Agg')
 from PyQt5 import QtWidgets
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
+
 
 class CNN:
 
@@ -114,14 +113,14 @@ class CNN:
 
         self.model.add(Dense(len(self.classes), activation='softmax'))
             
+        self.checkpoint = ModelCheckpoint(self.directory+"/model.h5", monitor='loss', verbose=0,
+    save_best_only=True, save_weights_only=True, mode='auto', period=1)
+
         self.model.compile(loss='sparse_categorical_crossentropy',
                     optimizer='nadam',
                     metrics=['accuracy'])
                 
     def trainmodel(self):
-        #self.earlyStopping = EarlyStopping(monitor='val_loss', patience=10, verbose=0, mode='min')
-        #self.mcp_save = ModelCheckpoint('.mdl_wts.hdf5', save_best_only=True, monitor='val_loss', mode='min')
-        
         if len(self.validation_generator.filenames)<self.BATCH_SIZE:
             self.BATCH_SIZE=len(self.validation_generator.filenames)
 
@@ -130,10 +129,9 @@ class CNN:
             steps_per_epoch=len(self.training_generator.filenames) // self.BATCH_SIZE,
             epochs=self.EPOCHS,
             validation_data=self.validation_generator,
-            validation_steps=len(self.validation_generator.filenames) // self.BATCH_SIZE,
-            #callbacks=[self.earlyStopping, self.mcp_save,PlotLossesCallback()], 
-            verbose=1)
-        self.model.save_weights(self.MODEL_FILE)
+            validation_steps=len(self.validation_generator.filenames) // self.BATCH_SIZE, 
+            verbose=1,
+            callbacks=[self.checkpoint])
 
     def loadmodel(self):
         self.model.load_weights(self.MODEL_FILE)
